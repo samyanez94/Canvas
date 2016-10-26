@@ -1,0 +1,157 @@
+body {
+    background: #384047;
+    font-family: sans-serif;
+    text-align: center;
+    overflow: scroll;
+}
+
+canvas {
+    background: #fff;
+    display: block;
+    margin: 50px auto 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 0 0 #222;
+    cursor: url(../img/cursor.png), crosshair;
+}
+
+.colors {
+    min-height: 60px;
+    width: 600px;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    float: left;
+    padding: 10px 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
+ul li,
+#newColor {
+    height: 54px;
+    width: 54px;
+    border-radius: 60px;
+    cursor: pointer;
+    box-shadow: 0 3px 0 0 #222;
+    border: 0px;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 5px 10px;
+}
+
+.red {
+    background: #fc4c4f;
+}
+
+.blue {
+    background: #4fa3fc;
+}
+
+.yellow {
+    background: #ECD13F;
+}
+
+.selected {
+    border: 7px solid #fff;
+    width: 40px;
+    height: 40px;
+}
+
+button {
+    background: #439dd8;
+    box-shadow: 0 3px 0 0 #041a29;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    text-shadow: 0 1px #0a4267;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.controls {
+    margin: auto;
+    width: 600px;
+}
+
+#revealColorSelect,
+#saveImage,
+#reset {
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 5px 20px;
+    width: 160px;
+}
+
+
+/* New Color Palette */
+
+#colorSelect {
+    background: #fff;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    padding: 10px;
+    width: 305px;
+    position: relative;
+    display: none;
+}
+
+#newColor {
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
+    box-shadow: none;
+    float: left;
+    border: none;
+    margin: 10px 20px 20px 10px;
+}
+
+.sliders p {
+    margin: 8px 0;
+    vertical-align: middle;
+}
+
+.sliders label {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 35px;
+    font-size: 14px;
+    color: #6D574E;
+}
+
+.sliders input {
+    position: relative;
+    top: 2px;
+}
+
+#colorSelect button {
+    border: none;
+    border-top: 1px solid #6A845F;
+    border-radius: 0 0 5px 5px;
+    clear: both;
+    margin: 10px -10px -7px;
+    padding: 5px 10px;
+    width: 325px;
+}
+
+
+/* Saving an image */
+
+#snapshots {
+    margin: 1.5em 5%;
+    overflow: auto;
+    text-align: center;
+}
+
+#snapshots img {
+    display: block;
+    margin: auto;
+    max-width: 400px;
+    border-radius: 5px;
+    background-color: white;
+}
