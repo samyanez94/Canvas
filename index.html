@@ -7,7 +7,11 @@
 </head>
 
 <body>
-    <canvas width="600" height="400"></canvas>
+    <canvas width="600" height="400">
+        <div id='errorMessage'>
+            <p>I'm sorry, the HTML canvas element couldn't be loaded on your browser. Try using a different one, or check <a href='http://caniuse.com/#feat=canvas'>www.caniuse.com</a> to view browser support.</p>
+        </div>
+    </canvas>
     <div class="colors">
         <ul>
             <li class="red selected"></li>
@@ -18,7 +22,7 @@
     <div class="controls">
         <button id="revealColorSelect">New Color</button>
         <button id="reset">Reset</button>
-        <button id="saveImage">Save</button>
+        <a id="save">Save</a>
         <div id="colorSelect">
             <span id="newColor"></span>
             <div class="sliders">
@@ -40,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div id="snapshots"></div>
+    <div id="snapshot"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
 </body>

@@ -1,3 +1,10 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
 body {
     background: #384047;
     font-family: sans-serif;
@@ -18,6 +25,7 @@ canvas {
     min-height: 60px;
     width: 600px;
     margin: auto;
+    display: none;
 }
 
 ul {
@@ -62,7 +70,7 @@ ul li {
     height: 40px;
 }
 
-button {
+button, #save {
     background: #439dd8;
     box-shadow: 0 3px 0 0 #041a29;
     color: #fff;
@@ -76,16 +84,40 @@ button {
 .controls {
     margin: auto;
     width: 600px;
+    display: none;
 }
 
 #revealColorSelect,
-#saveImage,
+#save,
 #reset {
     border: none;
     border-radius: 5px;
     margin: 10px 5px;
     padding: 5px 20px;
     width: 160px;
+}
+
+#save {
+    text-decoration: none;
+    padding: 16px 64px;
+}
+
+#errorMessage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    max-width: 75%;
+    margin: auto;
+}
+
+#errorMessage p {
+    color: #C5C7C7;
+}
+
+#errorMessage p a {
+    text-decoration: none;
+    color: #77C9E9;
 }
 
 
@@ -137,21 +169,4 @@ button {
     margin: 10px -10px -7px;
     padding: 5px 10px;
     width: 325px;
-}
-
-
-/* Saving an image */
-
-#snapshots {
-    margin: 1.5em 5%;
-    overflow: auto;
-    text-align: center;
-}
-
-#snapshots img {
-    display: block;
-    margin: auto;
-    max-width: 400px;
-    border-radius: 5px;
-    background-color: white;
 }
