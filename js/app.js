@@ -1,5 +1,5 @@
 //Selects the canvas element
-var canvas = $("canvas");
+const canvas = $("canvas");
 
 //Checks for browser support.
 if (canvas[0].getContext) {
@@ -8,13 +8,13 @@ if (canvas[0].getContext) {
     $(".colors").toggle();
 
     //Access the rendering context of the canvas
-    var context = canvas[0].getContext("2d");
+    const context = canvas[0].getContext("2d");
     //Selected color
-    var color = $(".selected").css("background-color");
+    let color = $(".selected").css("background-color");
     //Last mouse event
-    var lastEvent;
+    let lastEvent;
     //The mouse is up by defult
-    var mouseDown = false;
+    let mouseDown = false;
 
     //Changes the current color when clicking on control list items
     $(".colors").on("click", "li", function () {
@@ -30,10 +30,10 @@ if (canvas[0].getContext) {
     });
 
     //Updates the new color
-    function changeColor() {
-        var r = $("#red").val();
-        var g = $("#green").val();
-        var b = $("#blue").val();
+    const changeColor = () => {
+        let r = $("#red").val();
+        let g = $("#green").val();
+        let b = $("#blue").val();
         $("#newColor").css("background-color", "rgb(" + r + "," + g + ", " + b + ")");
     }
 
@@ -41,18 +41,18 @@ if (canvas[0].getContext) {
     $("input[type=range]").change(changeColor);
 
     //Adds the new color to the list when "Add Color" is pressed
-    $("#addNewColor").click(function () {
-        var newColor = $("<li></li>");
+    $("#addNewColor").click( () => {
+        let newColor = $("<li></li>");
         newColor.css("background-color", $("#newColor").css("background-color"));
         $(".colors ul").append(newColor);
         newColor.click();
     });
 
     //Mouse events on the canvas listeners
-    canvas.mousedown(function (e) {
+    canvas.mousedown( e => {
         lastEvent = e;
         mouseDown = true;
-    }).mousemove(function (e) {
+    }).mousemove( e => {
         //Listens to when the mouse moves and draws a line from the point where the mouse first touched the canvas
         if (mouseDown) {
             context.beginPath();
@@ -62,20 +62,20 @@ if (canvas[0].getContext) {
             context.stroke();
             lastEvent = e;
         }
-    }).mouseup(function () {
+    }).mouseup( () => {
         mouseDown = false;
-    }).mouseleave(function () {
+    }).mouseleave( () => {
         //If the mouse leaves the canvas, is the same as lifting a pencil
         canvas.mouseup();
     });
 
     //Clears the context of the canvas when the "Reset" button is clicked
-    $("#reset").click(function () {
+    $("#reset").click( () => {
         context.clearRect(0, 0, canvas[0].width, canvas[0].height);
     });
 
     //Downloads the content of the canvas
-    $("#save").click(function () {
+    $("#save").click( () => {
         $("#save")[0].href = canvas[0].toDataURL();
         $("#save")[0].download = "image.png";
     });
